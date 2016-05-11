@@ -27,4 +27,16 @@ describe('Thermostat', function() {
     }).toThrowError('Minimum temp is 10 degrees');
   });
 
+  it("Should default to power saving mode", function() {
+    expect(thermostat.powerSavingMode).toEqual(true);
+  });
+
+  it("Should have a maximum temp of 25 degress in Power Saving mode", function() {
+    thermostat.powerSavingMode = true;
+    thermostat.temp = 25;
+    expect(function() {
+      thermostat.up();
+    }).toThrowError('Maximum temp is 25 degrees');
+  });
+
 });
