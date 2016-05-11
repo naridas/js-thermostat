@@ -67,5 +67,4 @@ describe('Thermostat', function() {
     expect(thermostat.display()).toEqual("red");
   });
 
-
 });

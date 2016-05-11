@@ -4,6 +4,10 @@ function Thermostat() {
   this.powerSavingMode = true;
 };
 
+Thermostat.prototype.getCurrentTemperature = function() {
+  return this.temp;
+};
+
 Thermostat.prototype.up = function() {
   if (this.powerSavingMode && this.temp === 25) {
     throw new Error("Maximum temp is 25 degrees");
@@ -35,6 +39,22 @@ Thermostat.prototype.display = function(){
     return "yellow";
   }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
