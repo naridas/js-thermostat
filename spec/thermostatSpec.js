@@ -39,4 +39,33 @@ describe('Thermostat', function() {
     }).toThrowError('Maximum temp is 25 degrees');
   });
 
+
+  it("Should have a maximum temp of 32 degress when Power Saving mode is off", function() {
+    thermostat.powerSavingMode = false;
+    thermostat.temp = 32;
+    expect(function() {
+      thermostat.up();
+    }).toThrowError('Maximum temp is 32 degrees');
+  });
+
+  it("resets to 20 degrees", function(){
+    expect(thermostat.reset()).toEqual(20);
+  });
+
+  it("display green when temp < 18", function(){
+    thermostat.temp = 15;
+    expect(thermostat.display()).toEqual("green");
+  });
+
+  it("display yellow when temp < 25", function(){
+    thermostat.temp = 20;
+    expect(thermostat.display()).toEqual("yellow");
+  });
+
+  it("display red when temp >= 25", function(){
+    thermostat.temp = 30;
+    expect(thermostat.display()).toEqual("red");
+  });
+
+
 });
