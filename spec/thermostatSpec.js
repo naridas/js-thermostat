@@ -54,17 +54,17 @@ describe('Thermostat', function() {
 
   it("display green when temp < 18", function(){
     thermostat.temp = 15;
-    expect(thermostat.display()).toEqual("green");
+    expect(thermostat.monitor()).toEqual("green");
   });
 
   it("display yellow when temp < 25", function(){
     thermostat.temp = 20;
-    expect(thermostat.display()).toEqual("yellow");
+    expect(thermostat.monitor()).toEqual("yellow");
   });
 
   it("display red when temp >= 25", function(){
     thermostat.temp = 30;
-    expect(thermostat.display()).toEqual("red");
+    expect(thermostat.monitor()).toEqual("red");
   });
 
 });

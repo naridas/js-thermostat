@@ -1,16 +1,25 @@
 $(document).ready(function() {
 
   thermostat = new Thermostat();
+  var displayColor = thermostat.monitor();
+    $("h1").attr("style", "color: " + displayColor + ";");
+
   $('#temp').text(thermostat.temp);
 
   $('#temp-up').on('click', function(){
     thermostat.up();
+    displayColor = thermostat.monitor();
+    console.log(displayColor);
     $('#temp').text(thermostat.temp);
+    $("h1").attr("style", "color: " + displayColor + ";");
   });
 
   $('#temp-down').on('click', function(){
     thermostat.down();
+    displayColor = thermostat.monitor();
+    console.log(displayColor);
     $('#temp').text(thermostat.temp);
+    $("h1").attr("style", "color: " + displayColor + ";");
   });
 
   $('#temp-reset').on('click', function(){
@@ -29,21 +38,6 @@ $(document).ready(function() {
     $('#power-saving-status').text('off');
     thermostat.getCurrentTemperature();
   });
-
-  $("h1").attr("style", function(){
-    "color: " + thermostat.display + ";"
-  });
-
-
-   // var colorClass = thermostat.display;
-
-
-  // if (thermostat.display < 18) {
-  //   $('#temp').addClass('green').removeClass('red').removeClass('yellow');
-  // } else if (thermostat.display >= 25) {
-  //   $('#temp').addClass('red').removeClass('yellow').removeClass('green');
-  // } else {
-  //   $('#temp').addClass('yellow').removeClass('red').removeClass('green');
-  // }
+    
 });
 

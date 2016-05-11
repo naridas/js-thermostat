@@ -38,7 +38,7 @@ Thermostat.prototype.reset = function(){
   return this.temp = 20;
 };
 
-Thermostat.prototype.display = function(){
+Thermostat.prototype.monitor = function(){
   if (this.temp < 18) {
     return "green";
   } else if (this.temp >= 25) {
