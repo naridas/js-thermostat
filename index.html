@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Thermostat</title>
+  <link rel="stylesheet" type="text/css" href="src/custom.css">
 </head>
 <body>  
 
@@ -10,12 +11,18 @@
     <div id="display">
       <h1 id="temp"></h1>
     </div>
+    <div id="error">
+    </div>
     <button id="temp-up">Up</button>
     <button id="temp-down">Down</button>
     <button id="temp-reset">Reset</button>
-    power saving mode is <span id="power-saving-status">on</span>
-    <button id="power-saving-on">PSM on</button>
-    <button id="power-saving-off">PSM off</button>
+    <div>
+      power saving mode is <span id="power-saving-status"></span>
+    </div>
+    <div>
+      <button id="power-saving-on">PSM on</button>
+      <button id="power-saving-off">PSM off</button>
+    </div>
   </section>
   
   <script src="http://code.jquery.com/jquery.min.js"></script>
