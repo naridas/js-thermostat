@@ -10,20 +10,17 @@ Thermostat.prototype.getCurrentTemperature = function() {
 
 Thermostat.prototype.powerSavingModeOn = function(){
   this.powerSavingMode = true;
-  return "on";
 };
 
 Thermostat.prototype.powerSavingModeOff = function(){
   this.powerSavingMode = false;
-  return "off";
 };
 
-
 Thermostat.prototype.up = function() {
-  if (!this.powerSavingMode && this.temp === 32) {
+  if (this.powerSavingModeOff && this.temp === 32) {
     throw new Error("Maximum temp is 32 degrees");
-  } else if (this.powerSavingMode && this.temp === 25) {
-    throw new Error("Maximum temp is 25 degrees");
+   } else if (this.powerSavingMode && this.temp === 25) {
+      throw new Error("Maximum temp is 25 degrees");
   } else {
     this.temp ++;
   }

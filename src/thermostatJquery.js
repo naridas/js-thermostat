@@ -18,16 +18,32 @@ $(document).ready(function() {
     $('#temp').text(thermostat.temp);
   });
 
-  $('#power-saving-on').on('click', function(){
-    $('#power-saving-status').text(thermostat.powerSavingModeOn);
+  $('#power-saving-on').click(function(){
+    thermostat.powerSavingModeOn();
+    $('#power-saving-status').text('on');
+    thermostat.getCurrentTemperature();
   });
 
-  $('#power-saving-off').on('click', function(){
-    $('#power-saving-status').text(thermostat.powerSavingModeOff);
+  $('#power-saving-off').click(function(){
+    thermostat.powerSavingModeOff();
+    $('#power-saving-status').text('off');
+    thermostat.getCurrentTemperature();
   });
 
-  var colorClass = thermostat.display;
+  $("h1").attr("style", function(){
+    "color: " + thermostat.display + ";"
+  });
 
-  $('#temp').css('color', colorClass);
 
+   // var colorClass = thermostat.display;
+
+
+  // if (thermostat.display < 18) {
+  //   $('#temp').addClass('green').removeClass('red').removeClass('yellow');
+  // } else if (thermostat.display >= 25) {
+  //   $('#temp').addClass('red').removeClass('yellow').removeClass('green');
+  // } else {
+  //   $('#temp').addClass('yellow').removeClass('red').removeClass('green');
+  // }
 });
+
