@@ -1,3 +1,13 @@
+// API key:  a5c4a740b3e27e96c42f731fb1f35a5b
+//http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID={a5c4a740b3e27e96c42f731fb1f35a5b}
+
+
+// EXAMPLE OF API CALL:
+// {
+// "cod": 401,
+// "message": "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info."
+// }
+
 
 'use strict';
 
