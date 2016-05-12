@@ -1,32 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Thermostat</title>
-  <link rel="stylesheet" type="text/css" href="src/custom.css">
-</head>
-<body>  
-
-  <section id="thermostat">
-    <div id="display">
-      <h1 id="temp"></h1>
-    </div>
-    <div id="error">
-    </div>
-    <button id="temp-up">Up</button>
-    <button id="temp-down">Down</button>
-    <button id="temp-reset">Reset</button>
-    <div>
-      power saving mode is <span id="power-saving-status">ON</span>
-    </div>
-    <div>
-      <button id="power-saving-on">PSM on</button>
-      <button id="power-saving-off">PSM off</button>
-    </div>
-  </section>
-  
-  <script src="http://code.jquery.com/jquery.min.js"></script>
-  <script src="src/thermostat.js"></script>
-  <script src="src/thermostatJquery.js"></script>
-</body>
+  <head>
+    <title>Thermostat</title>
+  </head>
+  <body>
+    <section>
+      <script   src="https://code.jquery.com/jquery-2.2.3.min.js"
+        integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+        crossorigin="anonymous"></script>
+      <h1 id="temperature"></h1>
+      <p>
+        <button id="temperature-up">+</button>
+        <button id="temperature-down">-</button>
+        <button id="temperature-reset">reset</button>
+        power saving mode is <span id="power-saving-status">on</span>
+        <button id="powersaving-on">PSM on</button>
+        <button id="powersaving-off">PSM off</button>
+      </p>
+    </section>
+    <script src="src/thermostat.js"></script>
+    <script src="src/thermostatJQ.js"></script>
+  </body>
 </html>

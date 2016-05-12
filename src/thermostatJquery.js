@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  thermostat = new Thermostat();
+  var thermostat = new Thermostat();
   var displayColor = thermostat.monitor();
     
   $('#temp').text(thermostat.temp);

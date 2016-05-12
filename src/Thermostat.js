@@ -1,4 +1,3 @@
-
 'use strict';
 
 function Thermostat(){
@@ -6,7 +5,7 @@ function Thermostat(){
   this._temperature = 20;
   this._min = 10;
   this.powerSaveMode = true;
-  this.tempColor = "orange";
+  this.tempColor = "yellow";
 
 }
 
@@ -38,7 +37,7 @@ Thermostat.prototype.up = function (){
   if (this.atMax()){
     return;
   };
-  this._temperature += 1;
+  this._temperature = this._temperature + 1;
   this.changeTempColor();
 };
 
@@ -46,7 +45,7 @@ Thermostat.prototype.down = function (){
   if (this.atMin()){
     return;
   };
-  this._temperature -= 1;
+  this._temperature = this._temperature - 1;
   this.changeTempColor();
 };
 
@@ -66,7 +65,7 @@ Thermostat.prototype.changeTempColor = function (){
     return  this.tempColor = "green";
   };
   if (this._temperature <= 25 && this._temperature >= 18) {
-    return this.tempColor = "orange";
+    return this.tempColor = "yellow";
   };
   return this.tempColor = "red";
 };
