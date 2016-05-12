@@ -2,8 +2,7 @@ $(document).ready(function() {
 
   thermostat = new Thermostat();
   var displayColor = thermostat.monitor();
-    $("h1").attr("style", "color: " + displayColor + ";");
-
+    
   $('#temp').text(thermostat.temp);
 
   $('#temp-up').on('click', function(){
@@ -29,6 +28,10 @@ $(document).ready(function() {
 
   $('#power-saving-on').click(function(){
     thermostat.powerSavingModeOn();
+    if (thermostat.temp > 25) {
+      thermostat.temp = 25;
+      $('#temp').text(thermostat.temp);
+    };
     $('#power-saving-status').text('on');
     thermostat.getCurrentTemperature();
   });

@@ -10,6 +10,7 @@ Thermostat.prototype.getCurrentTemperature = function() {
 
 Thermostat.prototype.powerSavingModeOn = function(){
   this.powerSavingMode = true;
+  this.temp = 25;
 };
 
 Thermostat.prototype.powerSavingModeOff = function(){
@@ -47,22 +48,3 @@ Thermostat.prototype.monitor = function(){
     return "yellow";
   }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
