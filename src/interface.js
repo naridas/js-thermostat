@@ -27,6 +27,7 @@ $(document).ready(function() {
   $("#temperature-reset").click(function () {
     thermostat.resetTemp()
     updateTemperature();
+    $("h1").attr("style", "color: " + thermostat.currentColor() + ";");
   });
 
   $("#powersaving-on").click(function () {
